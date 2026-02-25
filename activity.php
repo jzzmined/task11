@@ -35,12 +35,12 @@ class Book {
     }
 
     public function displayBookInfo() {
-        $availability = $this->isAvailable ? "Available" : "Unavailable";
-        return "Title: $this->title, Author: $this->author, Year: $this->year, Status: $availability";
+        $availability = $this->isAvailable ? "Yes" : "No";
+        return "<br>Title: $this->title, <br>Author: $this->author, <br>Year: $this->year, <br>Available: $availability";
     }
 
 }
-
+    
     $book1 = new Book("To Kill a Mockingbird", "Harper Lee", 1960);
     $book1->isAvailable = true;
     $book2 = new Book("Frankenstein", "Mary Shelley", 1818);
@@ -48,6 +48,24 @@ class Book {
     $book3 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925);
     $book3->isAvailable = true;
 
+
+    // Header
+    echo $header = "<h1>Library Book Information</h1>";
+
+    // Display book information
+    echo $title = "<h3>Display Book Information</h3>";
+    echo $book1-> displayBookInfo() . '<br>';
+    
+    // Borrowing a book
+    echo $title = "<h3>Borrowing a Book</h3>";
+    echo $book2->borrowBook() . '<br>';
+    echo $book2->displayBookInfo() . '<br>';
+    
+
+    // Returning a book
+    echo $title = "<h3>Returning a Book</h3>";
+    echo $book3-> returnBook() . '<br>';
+    echo $book3->displayBookInfo() . '<br>';
 
 ?>
 
@@ -59,7 +77,7 @@ class Book {
     <title>Task 11</title>
 </head>
 <body>
-    
+ 
 </body>
 </html>
 
